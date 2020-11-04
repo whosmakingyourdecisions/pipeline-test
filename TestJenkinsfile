@@ -1,0 +1,17 @@
+pipeline {
+    agent {
+        label "master"
+    }
+    options {
+        timestamps()
+    }
+    stages {
+        stage("Fist stage") {
+            steps {
+                script {
+                    echo "Here I am"
+                }
+            }
+        }
+    }
+}
