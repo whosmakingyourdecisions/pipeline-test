@@ -12,6 +12,7 @@ pipeline {
         stage("Fist stage") {
             steps {
                 script {
+                    sh "whoami"
                     echo "Select folders that need to be checked out"
                     sh "git config core.sparsecheckout true"
                     sh "echo folder1 >> .git/info/sparse-checkout"
