@@ -1,5 +1,5 @@
 repoUrl = "https://github.com/whosmakingyourdecisions/pipeline-test.git"
-branch = "master"
+branch = "main"
 
 pipeline {
     agent {
