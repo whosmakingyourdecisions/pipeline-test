@@ -1,3 +1,6 @@
+repoUrl = "https://github.com/whosmakingyourdecisions/pipeline-test.git"
+branch = "master"
+
 pipeline {
     agent {
         label "master"
@@ -9,7 +12,12 @@ pipeline {
         stage("Fist stage") {
             steps {
                 script {
-                    echo "Here I am"
+                    echo "Select folders that need to be checked out"
+                    sh "git config core.sparsecheckout true"
+                    sh "echo folder1 >> .git/info/sparse-checkout"
+                    echo "Checkout folder1 only"
+                    git url: repoUrl, branch: branch
+                    sh "ls -la"
                 }
             }
         }
